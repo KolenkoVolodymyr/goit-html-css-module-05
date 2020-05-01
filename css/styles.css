@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.visually-hidden {
+  /* Удаляем элемент из потока документа */
+  position: absolute;
+  /* Временное решение для неверно произносимого, размазанного текста */
+  white-space: nowrap;
+  /* Устанавливаем минимально возможный размер (некоторые скринридеры игнорируют элементы с нулевой высотой и шириной) */
+  width: 1px;
+  height: 1px;
+  /* Скрываем вылезающий за границы контент */
+  overflow: hidden;
+  /* Сбрасываем любые свойства, которые могут повлиять на размер элемента */
+  border: 0;
+  padding: 0;
+  /* Вырезаем ту часть контента, которая должна отображаться. */
+  /* Устаревшее свойство clip для старых браузеров */
+  clip: rect(0 0 0 0);
+  /* clip-path для новых браузеров. inset(50%) определяет область вставки, которая позволит контенту исчезнуть.  */
+  clip-path: inset(50%);
+  /* Похоже, никто до конца не понимает, почему тут margin: -1px. Кроме того, это приводит к проблемам (читай: https://github.com/h5bp/html5-boilerplate/issues/1985). */
+  margin: -1px;
+}
+
+.container {
+  width: 1110px;
+  margin: auto;
+}
+
+/* NAVIGATION START */
+.logo {
+  font-size: 30px;
+  line-height: 32px;
+  letter-spacing: -1px;
+  color: #555252;
+  font-family: 'Roboto';
+  font-weight: 300;
+  text-transform: uppercase;
+  float: left;
+}
+
+.logo::first-letter {
+  font-size: 30px;
+  line-height: 32px;
+  color: #1abc9c;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+}
+/* LOGO */
+
+.navigation-list {
+  float: right;
+  margin-top: 7px;
+}
+
+.navigation-list-item {
+  float: left;
+}
+
+.navigation-list-item a {
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0px;
+  line-height: 11px;
+  color: #000000;
+  font-family: 'Open Sans';
+  font-weight: 700;
+}
+
+.navigation-list-item:not(:last-child) {
+  margin-right: 40px;
+}
+
+.navigation-list-item a:hover,
+.navigation-list-item a:focus {
+  color: #1abc9c;
+}
+.navigation {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* NAVIGATION END */
+
+/* SLIDER START */
+
+.header-site {
+  text-align: center;
+}
+
+.main-heading {
+  font-size: 60px;
+  letter-spacing: -1px;
+  line-height: 82px;
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-weight: 900;
+}
+
+.tour-info {
+  font-size: 24px;
+  font-family: 'Roboto';
+  font-weight: 300;
+}
+
+.slider::before {
+  background-color: rgba(0, 0, 0, 0.522);
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.slider {
+  position: relative;
+}
