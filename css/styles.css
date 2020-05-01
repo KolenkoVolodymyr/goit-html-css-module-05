@@ -113,23 +113,20 @@ a {
 
 /* SLIDER START */
 
-.header-site {
-  text-align: center;
-}
-
 .main-heading {
   font-size: 60px;
-  letter-spacing: -1px;
   line-height: 82px;
   color: #ffffff;
   font-family: 'Roboto';
   font-weight: 900;
+  text-transform: uppercase;
 }
 
 .tour-info {
   font-size: 24px;
   font-family: 'Roboto';
   font-weight: 300;
+  color: #ffffff;
 }
 
 .slider::before {
@@ -143,4 +140,37 @@ a {
 
 .slider {
   position: relative;
+}
+
+.slider-control {
+  display: block;
+  width: 105px;
+  height: 105px;
+  color: rgb(248, 87, 87);
+}
+
+.slider-navigation {
+  display: block;
+  content: '';
+  position: absolute;
+  max-width: 1110px;
+  top: 0px;
+  left: 0px;
+}
+
+.prev {
+  float: left;
+}
+
+.next {
+  float: right;
+}
+
+.header-site {
+  display: block;
+  content: '';
+  position: absolute;
+  max-width: 1110px;
+  top: 0px;
+  left: 0px;
 }
