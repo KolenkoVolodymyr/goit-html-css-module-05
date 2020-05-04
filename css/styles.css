@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 html {
@@ -15,7 +14,7 @@ ol {
 
 img {
   display: block;
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -111,6 +110,10 @@ a {
 
 /* NAVIGATION END */
 
+.main {
+  background-color: rgb(233, 240, 253);
+}
+
 /* SLIDER START */
 
 .main-heading {
@@ -141,12 +144,13 @@ a {
 
 .slider {
   position: relative;
+  margin-bottom: 100px;
 }
 
 .slider-control {
   display: block;
-  width: 105px;
-  height: 105px;
+  width: 104px;
+  height: 104px;
 }
 
 .slider-navigation {
@@ -196,3 +200,96 @@ a {
 }
 
 /* SLIDER END */
+
+/* Section START */
+
+.collection-header {
+  font-size: 48px;
+  font-family: 'Roboto';
+  color: rgb(81, 81, 81);
+  text-transform: uppercase;
+  line-height: 0.667;
+  text-align: center;
+}
+
+.collection-header::after {
+  display: block;
+  content: '';
+  background-color: rgb(26, 188, 156);
+  width: 164px;
+  height: 7px;
+  margin: 0 auto;
+  margin-top: 32px;
+}
+
+/* Cards START */
+
+.products-list {
+  margin: 0px;
+  padding: 0px;
+}
+
+.products-list-item {
+  width: 255px;
+  height: 322px;
+  float: left;
+}
+
+.product-info {
+  margin: 0px;
+  background-color: #323232;
+}
+
+.product-name {
+  height: 40px;
+  padding-top: 4px;
+  padding-left: 14px;
+  float: left;
+  line-height: 32px;
+  font-size: 18px;
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.product-price {
+  height: 40px;
+  width: 55px;
+  padding-top: 4px;
+  float: right;
+  line-height: 32px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-family: 'Roboto';
+  font-weight: 900;
+  text-align: center;
+}
+
+li:hover .product-info {
+  background-color: #1abc9c;
+}
+
+/* OVERLAY */
+
+li:hover .overlay {
+  display: block;
+}
+
+.overlay {
+  width: 255px;
+  height: 282px;
+  background-color: rgb(245, 215, 215);
+}
+
+.icons-wrapper {
+  width: 166px;
+  height: 107px;
+}
+
+.button {
+  background-image: url(/images/icons/like.png);
+  width: 50px;
+  height: 50px;
+}
