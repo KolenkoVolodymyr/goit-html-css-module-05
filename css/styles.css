@@ -1,9 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-}
-
-html {
   box-sizing: border-box;
 }
 
@@ -28,34 +25,11 @@ a {
   clear: both;
 }
 
-.visually-hidden {
-  /* Удаляем элемент из потока документа */
-  position: absolute;
-  /* Временное решение для неверно произносимого, размазанного текста */
-  white-space: nowrap;
-  /* Устанавливаем минимально возможный размер (некоторые скринридеры игнорируют элементы с нулевой высотой и шириной) */
-  width: 1px;
-  height: 1px;
-  /* Скрываем вылезающий за границы контент */
-  overflow: hidden;
-  /* Сбрасываем любые свойства, которые могут повлиять на размер элемента */
-  border: 0;
-  padding: 0;
-  /* Вырезаем ту часть контента, которая должна отображаться. */
-  /* Устаревшее свойство clip для старых браузеров */
-  clip: rect(0 0 0 0);
-  /* clip-path для новых браузеров. inset(50%) определяет область вставки, которая позволит контенту исчезнуть.  */
-  clip-path: inset(50%);
-  /* Похоже, никто до конца не понимает, почему тут margin: -1px. Кроме того, это приводит к проблемам (читай: https://github.com/h5bp/html5-boilerplate/issues/1985). */
-  margin: -1px;
-}
-
 .container {
   width: 1110px;
   margin: auto;
 }
 
-/* NAVIGATION START */
 .logo {
   font-size: 30px;
   line-height: 32px;
@@ -74,7 +48,6 @@ a {
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
 }
-/* LOGO */
 
 .navigation-list {
   float: right;
@@ -108,13 +81,9 @@ a {
   margin-bottom: 30px;
 }
 
-/* NAVIGATION END */
-
 .main {
   background-color: rgb(233, 240, 253);
 }
-
-/* SLIDER START */
 
 .main-heading {
   font-size: 60px;
@@ -199,10 +168,6 @@ a {
   border: 0px;
 }
 
-/* SLIDER END */
-
-/* Section START */
-
 .collection-header {
   font-size: 48px;
   font-family: 'Roboto';
@@ -220,9 +185,8 @@ a {
   height: 7px;
   margin: 0 auto;
   margin-top: 32px;
+  margin-bottom: 80px;
 }
-
-/* Cards START */
 
 .products-list {
   margin: 0px;
@@ -233,6 +197,8 @@ a {
   width: 255px;
   height: 322px;
   float: left;
+  position: relative;
+  margin-bottom: 100px;
 }
 
 .product-info {
@@ -241,22 +207,22 @@ a {
 }
 
 .product-name {
-  height: 40px;
   padding-top: 4px;
   padding-left: 14px;
+  padding-bottom: 4px;
   float: left;
   line-height: 32px;
   font-size: 18px;
-  color: #ffffff;
+  color: rgb(255, 255, 255);
   font-family: 'Roboto';
   font-weight: 900;
   text-transform: uppercase;
 }
 
 .product-price {
-  height: 40px;
   width: 55px;
   padding-top: 4px;
+  padding-bottom: 4px;
   float: right;
   line-height: 32px;
   font-size: 18px;
@@ -267,29 +233,119 @@ a {
   text-align: center;
 }
 
-li:hover .product-info {
+.products-list-item:hover .product-info {
   background-color: #1abc9c;
 }
 
-/* OVERLAY */
-
-li:hover .overlay {
-  display: block;
-}
-
 .overlay {
+  position: relative;
+  position: absolute;
   width: 255px;
   height: 282px;
-  background-color: rgb(245, 215, 215);
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0px;
+  left: 0px;
+  border: 10px solid rgba(255, 255, 255, 0.5);
+  background-clip: padding-box;
+  display: none;
 }
 
 .icons-wrapper {
   width: 166px;
   height: 107px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.button {
-  background-image: url(/images/icons/like.png);
+.action-button {
+  background-color: transparent;
+  border: 0px;
   width: 50px;
   height: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-width: 1px;
+  border-color: rgb(255, 255, 255);
+  border-style: solid;
+}
+
+.basket {
+  width: 166px;
+  height: 50px;
+  padding-right: 17px;
+  text-align: right;
+  background-image: url(../images/icons/basket.png);
+  background-position-x: 13px;
+  text-transform: uppercase;
+  background-color: rgb(50, 50, 50);
+  font-size: 14px;
+  font-family: 'Open Sans';
+  color: rgb(255, 255, 255);
+}
+
+.copy {
+  background-image: url(../images/icons/copy.png);
+}
+
+.put-off {
+  background-image: url(../images/icons/clock.png);
+}
+
+.like {
+  background-image: url(../images/icons/like.png);
+}
+
+.icons-list-item {
+  font-size: 0px;
+  float: left;
+}
+
+.icons-list-item:nth-child(-n + 2) {
+  margin-right: 8px;
+}
+.icons-list-item:nth-child(-n + 3) {
+  margin-bottom: 7px;
+}
+
+.action-button:hover,
+.action-button:focus {
+  background-color: #1abc9c;
+  border: transparent;
+}
+
+.products-list-item:hover .overlay {
+  display: block;
+}
+
+.products-list-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.rights,
+.rihgts-link {
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  color: rgb(254, 254, 254);
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.footer {
+  background-color: #323232;
+}
+
+.rihgts-link:hover,
+.rihgts-link:focus {
+  color: #1abc9c;
+}
+.rihgts-link {
+  margin-left: 5px;
+}
+
+.footer-wrapper {
+  text-align: center;
 }
