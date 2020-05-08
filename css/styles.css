@@ -141,7 +141,7 @@ a {
   max-width: 800px;
   top: 0px;
   left: 0px;
-  top: 47%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
@@ -206,7 +206,7 @@ a {
   background-color: #323232;
 }
 
-.product-name {
+.product-info-link {
   padding-top: 4px;
   padding-left: 14px;
   padding-bottom: 4px;
@@ -338,12 +338,9 @@ a {
   background-color: #323232;
 }
 
-.rihgts-link:hover,
-.rihgts-link:focus {
-  color: #1abc9c;
-}
 .rihgts-link {
   margin-left: 5px;
+  color: #1abc9c;
 }
 
 .footer-wrapper {
