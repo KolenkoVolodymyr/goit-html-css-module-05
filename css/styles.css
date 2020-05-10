@@ -116,6 +116,10 @@ a {
   margin-bottom: 100px;
 }
 
+.slider-photo {
+  margin: 0 auto;
+}
+
 .slider-control {
   display: block;
   width: 104px;
